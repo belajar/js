@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
  <title>BelajarJS</title>
- <link href="http://belajarjs.ml//atom.xml" rel="self"/>
- <link href="http://belajarjs.ml//"/>
- <updated>2015-03-30T06:49:15+08:00</updated>
- <id>http://belajarjs.ml/</id>
+ <link href="http://belajar.github.io/js//atom.xml" rel="self"/>
+ <link href="http://belajar.github.io/js//"/>
+ <updated>2015-03-30T16:00:23+08:00</updated>
+ <id>http://belajar.github.io/js/</id>
  <author>
    <name></name>
    <email></email>
@@ -14,9 +14,9 @@
  
  <entry>
    <title>Selamat Datang !</title>
-   <link href="http://belajarjs.ml//selamat-datang.html"/>
+   <link href="http://belajar.github.io/js//selamat-datang.html"/>
    <updated>2015-03-29T00:00:00+08:00</updated>
-   <id>http://belajarjs.ml//selamat-datang</id>
+   <id>http://belajar.github.io/js//selamat-datang</id>
    <content type="html">&lt;p&gt;Selamat datang ke laman web Belajar JavaScript. Di sini saya akan cuba berkongsi maklumat dan
 pengalaman mempelajari bahasa pengaturcaraan JavaScript.&lt;/p&gt;
 </content>

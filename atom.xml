@@ -4,13 +4,53 @@
  <title>BelajarJS</title>
  <link href="http://belajar.github.io/js//atom.xml" rel="self"/>
  <link href="http://belajar.github.io/js//"/>
- <updated>2015-03-30T16:17:25+08:00</updated>
+ <updated>2015-03-31T23:28:01+08:00</updated>
  <id>http://belajar.github.io/js/</id>
  <author>
    <name></name>
    <email></email>
  </author>
 
+ 
+ <entry>
+   <title>Memulakan pengaturcaraan dalam JavaScript</title>
+   <link href="http://belajar.github.io/js//memulakan-pengaturcaraan-dalam-javascript.html"/>
+   <updated>2015-03-30T00:00:00+08:00</updated>
+   <id>http://belajar.github.io/js//memulakan-pengaturcaraan-javascript</id>
+   <content type="html">&lt;p&gt;Memulakan pengaturcaraan dalam JavaScript agak mudah kerana boleh dikatakan semua pelayar web (browser) utama
+seperti Google Chrome, Mozilla Firefox, Internet Explorer atau Apple Safari mempunyai sokongan JavaScript. Jadi
+jika anda mempunyai pelayar web di atas, anda boleh mula menulis kod JavaScript serta-merta.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;div class=&quot;admonition-info&quot;&gt;
+    JavaScript hari ini bagaimanapun tidak lagi terhad untuk dijalankan pada browser sahaja. Ia juga turut
+    digunakan pada &lt;i&gt;server-side&lt;/i&gt; melalui teknologi seperti NodeJS dan sebagainya.
+&lt;/div&gt;
+
+&lt;div&gt;&amp;nbsp;&lt;/div&gt;
+
+&lt;p&gt;Contohnya jika anda menggunakan Google Chrome, tekan kekunci &lt;em&gt;shortcut&lt;/em&gt; Ctrl+Shift+J atau klik pada menu
+utama, dan seterusnya &lt;em&gt;More Tools&lt;/em&gt; ==&amp;gt; &lt;em&gt;JavaScript Console&lt;/em&gt;. Anda akan mendapat paparan seperti di bawah:-&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/O4Equhd.png&quot;&gt;&lt;/img&gt;&lt;/p&gt;
+
+&lt;p&gt;Pada bahagian &lt;em&gt;Console&lt;/em&gt;, anda boleh cuba taip kod berikut:-&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;alert&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;hello world&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Dan anda akan mendapat &lt;em&gt;pop-up&lt;/em&gt; seperti dalam gambar di atas. Anda telah menulis kod JavaScript yang
+pertama !&lt;/p&gt;
+
+&lt;p&gt;Bagaimanapun sudah pasti menulis kod dengan cara ini hanya sesuai untuk menguji beberapa baris kod
+pendek sahaja. Untuk tutorial permulaan yang lebih lengkap, boleh rujuk kepada tulisan berikut:-&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.mydev.my/belajar-javascript-bhg-1.html&quot;&gt;Belajar JavaScript Bgh 1&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.mydev.my/belajar-javascript-bhg-2.html&quot;&gt;Belajar JavaScript Bgh 2&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.mydev.my/belajar-javascript-bhg-3.html&quot;&gt;Belajar JavaScript Bgh 3&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Selamat Datang !</title>

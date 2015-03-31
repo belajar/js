@@ -9,14 +9,15 @@
   <!-- Enable responsiveness on mobile devices-->
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
   <meta property="og:type" content="article"/>
-  <meta property="og:title" content="Bina HTTP requests menggunakan nc"/>
-  <meta property="og:description" content=""/>
-  <meta property="og:url" content="http://www.belajarjs.ml/tips/bina-http-requests-nc.html" />
+  <meta property="og:title" content="Memulakan pengaturcaraan dalam JavaScript"/>
+  <meta property="og:description" content="Panduan ringkas bagaimana untuk memulakan pengaturcaraan dalam bahasa JavaScript
+"/>
+  <meta property="og:url" content="http://www.belajarjs.ml/memulakan-pengaturcaraan-dalam-javascript.html" />
   <meta property="og:image" content="http://www.belajarjs.ml/public/images/js.png"/>
 
   <title>
     
-      Bina HTTP requests menggunakan nc &middot; BelajarJS
+      Memulakan pengaturcaraan dalam JavaScript &middot; BelajarJS
     
   </title>
 
@@ -96,63 +97,93 @@
 
 
     <div class="content container">
-      <div class="post">
-  <h1 class="post-title">Bina HTTP requests menggunakan nc</h1>
-    <span class="post-date">
-      Ditulis pada 2015-01-28
       
-      
-      <span> oleh <a href="/authors/kamalmustafa.html">Kamal Mustafa</a></span>
-      
-    </span>
-  <p>Untuk memeriksa <em>connection</em> dengan sesuatu laman web, saya biasanya menggunakan <code>telnet</code>
-untuk melakukan <em>http requests</em> kepada <em>server</em> laman web tersebut. Tujuan utama adalah
-untuk berhubung dengan server secara terus bagi memastikan masalah yang dihadapi tidak
-disebabkan oleh aplikasi diperingkat lebih tinggi.</p>
 
-<p>Contohnya untuk melakukan <code>GET</code> <em>request</em>:-</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">telnet github.io 80
-Trying 199.27.75.133...
-Connected to github.map.fastly.net.
-Escape character is &#39;^]&#39;.
-GET /
-Connection closed by foreign host.
-</code></pre></div>
-<p><code>telnet</code> mempunyai pelbagai masalah. Dalam contoh di atas, saya cuma dapat melakukan <code>GET</code>
-<em>request</em> tanpa sempat menambah sebarang <em>HTTP headers</em> seperti <code>HOST</code> sebelum server tersebut
-menutup <em>connection</em>.</p>
+<div class="post">
+  <h1 class="post-title">Memulakan pengaturcaraan dalam JavaScript</h1>
 
-<p>Sesetengah <em>server</em> juga akan <em>time out</em> dengan cepat sekiranya mereka tidak menerima sebarang
-data selepas <em>establish connection</em>. Lagi satu oleh kerana arahan di atas dimasukkan secara
-interaktif, ianya tidak boleh diulang atau diautomasi dalam bentuk <em>script</em>.</p>
+  <div class="post-date">30 Mar 2015
+<span>
+&middot; Aras
 
-<p>Menggunakan <code>nc</code> nampaknya lebih baik. Contohnya untuk melakukan request beserta dengan <code>HOST</code>
-<em>header</em> sekali:-</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">echo -en &quot;HEAD / HTTP/1.1\r\nHOST: k4ml.github.io\r\n\r\n&quot; | nc k4ml.github.io 80
-</code></pre></div>
-<p>Dan anda akan mendapat output:-</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">HTTP/1.1 200 OK
-Server: GitHub.com
-Content-Type: text/html
-Last-Modified: Fri, 12 Apr 2013 23:26:51 GMT
-Expires: Sun, 26 May 2013 19:40:06 GMT
-Cache-Control: max-age=600
-Content-Length: 9991
-Accept-Ranges: bytes
-Date: Sun, 26 May 2013 19:30:07 GMT
-Via: 1.1 varnish
-Age: 0
-Connection: keep-alive
-X-Served-By: cache-s34-SJC2
-X-Cache: MISS
-X-Cache-Hits: 0
-X-Timer: S1369596606.987305880,VS0,VE145
-Vary: Accept-Encoding
-</code></pre></div>
+	Asas
+
+</span>
 </div>
-<div>
-    <a href="/tips/">Tips seterusnya ...</a>
-<div>
+  <p>Memulakan pengaturcaraan dalam JavaScript agak mudah kerana boleh dikatakan semua pelayar web (browser) utama
+seperti Google Chrome, Mozilla Firefox, Internet Explorer atau Apple Safari mempunyai sokongan JavaScript. Jadi
+jika anda mempunyai pelayar web di atas, anda boleh mula menulis kod JavaScript serta-merta.</p>
+
+<!--more-->
+
+<div class="admonition-info">
+    JavaScript hari ini bagaimanapun tidak lagi terhad untuk dijalankan pada browser sahaja. Ia juga turut
+    digunakan pada <i>server-side</i> melalui teknologi seperti NodeJS dan sebagainya.
+</div>
+
+<div>&nbsp;</div>
+
+<p>Contohnya jika anda menggunakan Google Chrome, tekan kekunci <em>shortcut</em> Ctrl+Shift+J atau klik pada menu
+utama, dan seterusnya <em>More Tools</em> ==&gt; <em>JavaScript Console</em>. Anda akan mendapat paparan seperti di bawah:-</p>
+
+<p><img src="http://i.imgur.com/O4Equhd.png"></img></p>
+
+<p>Pada bahagian <em>Console</em>, anda boleh cuba taip kod berikut:-</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;hello world&#39;</span><span class="p">);</span>
+</code></pre></div>
+<p>Dan anda akan mendapat <em>pop-up</em> seperti dalam gambar di atas. Anda telah menulis kod JavaScript yang
+pertama !</p>
+
+<p>Bagaimanapun sudah pasti menulis kod dengan cara ini hanya sesuai untuk menguji beberapa baris kod
+pendek sahaja. Untuk tutorial permulaan yang lebih lengkap, boleh rujuk kepada tulisan berikut:-</p>
+
+<ul>
+<li><a href="http://www.mydev.my/belajar-javascript-bhg-1.html">Belajar JavaScript Bgh 1</a></li>
+<li><a href="http://www.mydev.my/belajar-javascript-bhg-2.html">Belajar JavaScript Bgh 2</a></li>
+<li><a href="http://www.mydev.my/belajar-javascript-bhg-3.html">Belajar JavaScript Bgh 3</a></li>
+</ul>
+
+</div>
+
+
+
+<div class="author">
+  <div style="margin-bottom:10px; font-style:italic">Mengenai penulis</div>
+  
+	<div class="pic">
+		<a name="" />
+		<img  src="http://m.c.lnkd.licdn.com/mpr/pub/image-Xi3rdNhL21LXnFhIZ9ai-2TuhAQVtL47Xi3e-Ut6hszrbxGYXi3eI8yLh7vHUjxRwIF7/mohd-kamal-mustafa.jpg" />
+	</div>
+	<div class="bio">
+		<p>
+			<a name="Kamal Mustafa" href="http://my.linkedin.com/in/mk4ml" style="font-weight:bold;">Kamal Mustafa</a> Web developer di MARIMORE Inc. Banyak terlibat dalam pembangunan aplikasi web menggunakan Python/Django (server-side) dan sekarang cuba berjinak-jinak dengan teknologi client-side. Aktif menulis di blog peribadi <a href="http://k4ml.github.io/">ImportError</a> dan Twitter <a href="http://twitter.com/k4ml">@k4ml</a>.
+		<p>
+		<p style="font-style:italic">
+			<a href="http://my.linkedin.com/in/mk4ml">Kamal Mustafa</a> is a Web Developer at MARIMORE Inc. Involved in web applications development using Python/Django (server-side) and now looking into client-side technologies. Actively sharing his thought at personal blog <a href="http://k4ml.github.io/">ImportError</a> and Twitter <a href="http://twitter.com/k4ml">@k4ml</a>.
+		</p>
+                <p>
+                        All writings here are his own and not necessarily represent his employer's positions, strategies or opinions.
+                </p>
+	</div>
+
+</div>
+
+
+<div class="related">
+  <h2>Artikel Berkaitan</h2>
+  <ul class="related-posts">
+    
+      <li>
+        <h3>
+          <a href="/js/selamat-datang.html">
+            Selamat Datang !
+            <small>29 Mar 2015</small>
+          </a>
+        </h3>
+      </li>
+    
+  </ul>
+</div>
 
 <div id="disqus_thread"></div>
 <script type="text/javascript">
@@ -165,7 +196,6 @@ dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
 </script>
 <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>

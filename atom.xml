@@ -4,13 +4,135 @@
  <title>BelajarJS</title>
  <link href="http://belajar.github.io/js//atom.xml" rel="self"/>
  <link href="http://belajar.github.io/js//"/>
- <updated>2015-03-31T23:28:01+08:00</updated>
+ <updated>2015-04-22T08:27:38+08:00</updated>
  <id>http://belajar.github.io/js/</id>
  <author>
    <name></name>
    <email></email>
  </author>
 
+ 
+ <entry>
+   <title>4 Cara Define Function</title>
+   <link href="http://belajar.github.io/js//4-cara-define-function.html"/>
+   <updated>2015-03-31T00:00:00+08:00</updated>
+   <id>http://belajar.github.io/js//4-cara-define-function</id>
+   <content type="html">&lt;p&gt;Semua bahasa pengaturcaraan mempunyai komponen yang dinamakan &lt;em&gt;function&lt;/em&gt; yang fungsi utamanya
+adalah untuk merangkumkan beberapa arahan ke dalam satu unit yang boleh digunakan berulang-kali.
+Ia dapat mengelakkan pengulangan kod yang sama dalam aturcara kita.&lt;/p&gt;
+
+&lt;p&gt;Dalam JavaScript, &lt;em&gt;function&lt;/em&gt; boleh dikatakan salah satu daripada sumber kekuatannya kerana ia dapat
+digunakan untuk tujuan berikut:-&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;Code reuse&lt;/em&gt; - Mengelakkan pengulangan kod yang sama.&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Information hiding&lt;/em&gt; - Menghadkan akses kepada sesuatu &lt;em&gt;variable&lt;/em&gt; daripada bahagian lain aturcara.
+Dalam bahasa &lt;em&gt;object-oriented&lt;/em&gt; lain seperti Java, ia dipanggil private variable.&lt;/li&gt;
+&lt;li&gt;Composition - Beberapa &lt;em&gt;function&lt;/em&gt; digabungkan bersama bagi membentuk satu set &lt;em&gt;functionality&lt;/em&gt; bagi
+sesuatu objek.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Untuk tulisan ini bagaimana pun saya cuma ingin menyenaraikan 4 cara atau &lt;em&gt;pattern&lt;/em&gt; yang biasa digunakan
+untuk define &lt;em&gt;function&lt;/em&gt; dalam JavaScript. Berkaitan kegunaan-kegunaan &lt;em&gt;function&lt;/em&gt; itu sendiri, saya akan
+cuba sentuh dalam tulisan akan datang, Insya Allah.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;h2 id=&quot;cara-1---function-statement&quot;&gt;Cara 1 - Function statement&lt;/h2&gt;
+
+&lt;p&gt;Ini adalah cara yang paling biasa:-&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;num1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;num2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;num1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;num2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Dalam kaedah ini, kita gunakan &lt;em&gt;keyword&lt;/em&gt; &lt;code&gt;function&lt;/code&gt; dan diikuti dengan nama bagi &lt;em&gt;function&lt;/em&gt; tersebut.
+Satu perkara yang perlu kita ingati di sini ialah cara menulis &lt;em&gt;function&lt;/em&gt; seperti ini tertakhluk kepada
+satu &lt;em&gt;behavior&lt;/em&gt; JavaScript yang dipanggil &amp;#39;hoisting&amp;#39;. Contohnya code dibawah adalah betul:-&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;num1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;num2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;num1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;num2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Ya, anda boleh memanggil &lt;em&gt;function&lt;/em&gt; sebelum ia diisytiharkan. Ini kerana apabila dijalankan, JavaScript akan
+menjalakannya seperti berikut:-&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;num1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;num2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;num1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;num2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Kesemua definisi &lt;em&gt;function&lt;/em&gt; akan sentiasa dipindahkan ke atas oleh JavaScript.&lt;/p&gt;
+
+&lt;h2 id=&quot;cara-2---function-expression&quot;&gt;Cara 2 - Function expression&lt;/h2&gt;
+
+&lt;p&gt;Cara ini menggunakan &lt;em&gt;anonymous&lt;/em&gt; function yang dirujuk kepada &lt;em&gt;variable&lt;/em&gt;:-&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;add&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;num1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;num2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;num1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;num2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Cara ini tidak tertakhluk kepada &lt;em&gt;hoisting&lt;/em&gt; seperti sebelum ini jadi jika anda cuba define
+function anda seperti berikut:-&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;add&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;num1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;num2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;num1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;num2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Anda akan mendapat &lt;code&gt;TypeError: undefined is not a function&lt;/code&gt;. &lt;em&gt;Variable&lt;/em&gt; &lt;code&gt;add&lt;/code&gt; bagaimana pun masih tertakhluk kepada
+hoisting, jadi code sebenar yang dijalankan oleh JavaScript adalah seperti berikut:-&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;add&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;undefined&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;add&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;num1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;num2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;num1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;num2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;em&gt;Function expression&lt;/em&gt; memang digunakan secara meluas namun satu keburukkannya adalah ia menyusahkan proses
+debugging kerana function tersebut adalah &lt;em&gt;anonymous&lt;/em&gt; - tidak mempunyai sebarang nama.&lt;/p&gt;
+
+&lt;h2 id=&quot;cara-3---immediately-invoked-function&quot;&gt;Cara 3 - Immediately invoked function&lt;/h2&gt;
+
+&lt;p&gt;Ini juga anda akan biasa jumpa dalam banyak code JavaScript:-&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;alert&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;hello world&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}());&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Tujuan utama cara ini digunakan adalah untuk mengelakkan penambahan &lt;em&gt;variable&lt;/em&gt; baru yang tidak diperlukan ke dalam
+skop global JavaScript.&lt;/p&gt;
+
+&lt;p&gt;Cara ini sangat berguna untuk kita mengawal skop program, contohnya untuk &lt;em&gt;alias&lt;/em&gt; variable yang panjang namanya
+kepada variable yang lebih pendek tapi terhad kepada skop function tersebut sahaja.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;form#order&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;submit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;...&lt;/span&gt;  
+    &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;jQuery&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Di luar daripada &lt;em&gt;function&lt;/em&gt; objek sebenar dipanggil &lt;em&gt;jQuery&lt;/em&gt; tapi dalam function di atas kita boleh mengakses
+objek tersebut melalui nama &lt;code&gt;$&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h1 id=&quot;cara-4---immediately-invoked-function-(using-+-operator)&quot;&gt;Cara 4 - Immediately invoked function (using + operator)&lt;/h1&gt;
+
+&lt;p&gt;Ianya sama dengan nombor &lt;code&gt;#4&lt;/code&gt; di atas cuma menggunakan operator &lt;code&gt;+&lt;/code&gt; berbanding &lt;code&gt;()&lt;/code&gt;. Cara ini saya jumpa dalam
+code Twitter Bootstrap.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;alert&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;hello world&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}();&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Kedua-dua cara #3 dan #4 digunakan kerana dalam JavaScript code seperti berikut adalah tidak valid:-&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;alert&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;hello world&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Setiap &lt;em&gt;function&lt;/em&gt; mesti mempunyai nama (&lt;em&gt;function statement&lt;/em&gt;) ataupun jika ianya dalam bentuk &lt;em&gt;function expression&lt;/em&gt;, ia mesti dirujuk (&lt;em&gt;assigned&lt;/em&gt;) kepada &lt;em&gt;variable&lt;/em&gt;. Tetapi kita tidak mahu menambahkan &lt;em&gt;variable&lt;/em&gt; baru ke dalam skop global, jadi kita mesti ubah sedikit code tersebut supaya ia kekal sebagai &lt;em&gt;valid expression&lt;/em&gt;. Dengan meletakkan &lt;em&gt;function&lt;/em&gt; tersebut dalam &lt;em&gt;parantheses&lt;/em&gt; &lt;code&gt;()&lt;/code&gt; atau pun meletakkan operator &lt;code&gt;+&lt;/code&gt; pada sebelum &lt;em&gt;function&lt;/em&gt; tersebut, ia menjadikan &lt;em&gt;function&lt;/em&gt; itu satu &lt;em&gt;expression&lt;/em&gt;. &lt;/p&gt;
+
+&lt;h2 id=&quot;rujukan&quot;&gt;Rujukan&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;http://davidbcalhoun.com/2011/different-ways-of-defining-functions-in-javascript-this-is-madness/&lt;/li&gt;
+&lt;li&gt;http://www.bryanbraun.com/2014/11/27/every-possible-way-to-define-a-javascript-function&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Memulakan pengaturcaraan dalam JavaScript</title>

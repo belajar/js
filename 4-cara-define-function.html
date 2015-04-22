@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+  <meta property="og:type" content="article"/>
+  <meta property="og:title" content="4 Cara Define Function"/>
+  <meta property="og:description" content="4 cara atau pattern yang biasa digunakan untuk define function dalam JavaScript.
+"/>
+  <meta property="og:url" content="http://www.belajarjs.ml/4-cara-define-function.html" />
+  <meta property="og:image" content="http://www.belajarjs.ml/public/images/js.png"/>
+
+  <title>
+    
+      4 Cara Define Function &middot; BelajarJS
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/js/public/css/poole.css">
+  <link rel="stylesheet" href="/js/public/css/syntax.css">
+  <link rel="stylesheet" href="/js/public/css/hyde.css">
+  <link rel="stylesheet" href="/js/public/css/custom.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/js/public/apple-touch-icon-144-precomposed.png">
+                                 <link rel="shortcut icon" href="/js/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/js/atom.xml">
+</head>
+
+
+  <body class="theme-base-0d">
+
+    <div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>
+        <a href="/js/index.html">
+          BelajarJS
+        </a>
+      </h1>
+      <p class="lead">Suatu projek untuk memperkaya bahan berkenaan pembangunan perisian dan web dalam Bahasa Melayu.</p>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a class="sidebar-nav-item" href="/js/index.html">Utama</a>
+
+      
+
+      
+      
+        
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/js/archive.html">Arkib</a>
+          
+        
+      
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/js/authors.html">Penulis</a>
+          
+        
+      
+        
+      
+        
+          
+        
+      
+        
+      
+
+      <a class="sidebar-nav-item" href="https://www.facebook.com/groups/belajarjs/">Facebook</a>
+      <a class="sidebar-nav-item" href="http://github.com/belajar/js">GitHub</a>
+      <a class="sidebar-nav-item" href="/js/atom.xml">Atom Feed &nbsp;<i class="fa fa-rss-square"></i></a>
+      <!-- <span class="sidebar-nav-item">Currently v</span> -->
+    </nav>
+
+    <p style="font-size:70%">Melainkan dinyatakan sebaliknya, kesemua kandungan dalam laman ini dilesenkan di bawah <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International</a>.</p>
+  </div>
+</div>
+
+
+    <div class="content container">
+      
+
+<div class="post">
+  <h1 class="post-title">4 Cara Define Function</h1>
+
+  <div class="post-date">31 Mar 2015
+<span>
+&middot; Aras
+
+	Asas
+
+</span>
+</div>
+  <p>Semua bahasa pengaturcaraan mempunyai komponen yang dinamakan <em>function</em> yang fungsi utamanya
+adalah untuk merangkumkan beberapa arahan ke dalam satu unit yang boleh digunakan berulang-kali.
+Ia dapat mengelakkan pengulangan kod yang sama dalam aturcara kita.</p>
+
+<p>Dalam JavaScript, <em>function</em> boleh dikatakan salah satu daripada sumber kekuatannya kerana ia dapat
+digunakan untuk tujuan berikut:-</p>
+
+<ul>
+<li><em>Code reuse</em> - Mengelakkan pengulangan kod yang sama.</li>
+<li><em>Information hiding</em> - Menghadkan akses kepada sesuatu <em>variable</em> daripada bahagian lain aturcara.
+Dalam bahasa <em>object-oriented</em> lain seperti Java, ia dipanggil private variable.</li>
+<li>Composition - Beberapa <em>function</em> digabungkan bersama bagi membentuk satu set <em>functionality</em> bagi
+sesuatu objek.</li>
+</ul>
+
+<p>Untuk tulisan ini bagaimana pun saya cuma ingin menyenaraikan 4 cara atau <em>pattern</em> yang biasa digunakan
+untuk define <em>function</em> dalam JavaScript. Berkaitan kegunaan-kegunaan <em>function</em> itu sendiri, saya akan
+cuba sentuh dalam tulisan akan datang, Insya Allah.</p>
+
+<!--more-->
+
+<h2 id="cara-1---function-statement">Cara 1 - Function statement</h2>
+
+<p>Ini adalah cara yang paling biasa:-</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">add</span><span class="p">(</span><span class="nx">num1</span><span class="p">,</span> <span class="nx">num2</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">num1</span> <span class="o">+</span> <span class="nx">num2</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Dalam kaedah ini, kita gunakan <em>keyword</em> <code>function</code> dan diikuti dengan nama bagi <em>function</em> tersebut.
+Satu perkara yang perlu kita ingati di sini ialah cara menulis <em>function</em> seperti ini tertakhluk kepada
+satu <em>behavior</em> JavaScript yang dipanggil &#39;hoisting&#39;. Contohnya code dibawah adalah betul:-</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">add</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
+
+<span class="kd">function</span> <span class="nx">add</span><span class="p">(</span><span class="nx">num1</span><span class="p">,</span> <span class="nx">num2</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">num1</span> <span class="o">+</span> <span class="nx">num2</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Ya, anda boleh memanggil <em>function</em> sebelum ia diisytiharkan. Ini kerana apabila dijalankan, JavaScript akan
+menjalakannya seperti berikut:-</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">add</span><span class="p">(</span><span class="nx">num1</span><span class="p">,</span> <span class="nx">num2</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">num1</span> <span class="o">+</span> <span class="nx">num2</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nx">add</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
+</code></pre></div>
+<p>Kesemua definisi <em>function</em> akan sentiasa dipindahkan ke atas oleh JavaScript.</p>
+
+<h2 id="cara-2---function-expression">Cara 2 - Function expression</h2>
+
+<p>Cara ini menggunakan <em>anonymous</em> function yang dirujuk kepada <em>variable</em>:-</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">add</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">num1</span><span class="p">,</span> <span class="nx">num2</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">num1</span> <span class="o">+</span> <span class="nx">num2</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Cara ini tidak tertakhluk kepada <em>hoisting</em> seperti sebelum ini jadi jika anda cuba define
+function anda seperti berikut:-</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">add</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">));</span>
+<span class="kd">var</span> <span class="nx">add</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">num1</span><span class="p">,</span> <span class="nx">num2</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">num1</span> <span class="o">+</span> <span class="nx">num2</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Anda akan mendapat <code>TypeError: undefined is not a function</code>. <em>Variable</em> <code>add</code> bagaimana pun masih tertakhluk kepada
+hoisting, jadi code sebenar yang dijalankan oleh JavaScript adalah seperti berikut:-</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">add</span> <span class="o">=</span> <span class="kc">undefined</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">add</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">));</span>
+<span class="nx">add</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">num1</span><span class="p">,</span> <span class="nx">num2</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">num1</span> <span class="o">+</span> <span class="nx">num2</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><em>Function expression</em> memang digunakan secara meluas namun satu keburukkannya adalah ia menyusahkan proses
+debugging kerana function tersebut adalah <em>anonymous</em> - tidak mempunyai sebarang nama.</p>
+
+<h2 id="cara-3---immediately-invoked-function">Cara 3 - Immediately invoked function</h2>
+
+<p>Ini juga anda akan biasa jumpa dalam banyak code JavaScript:-</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;hello world&#39;</span><span class="p">);</span>
+<span class="p">}());</span>
+</code></pre></div>
+<p>Tujuan utama cara ini digunakan adalah untuk mengelakkan penambahan <em>variable</em> baru yang tidak diperlukan ke dalam
+skop global JavaScript.</p>
+
+<p>Cara ini sangat berguna untuk kita mengawal skop program, contohnya untuk <em>alias</em> variable yang panjang namanya
+kepada variable yang lebih pendek tapi terhad kepada skop function tersebut sahaja.</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">$</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;form#order&#39;</span><span class="p">).</span><span class="nx">submit</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="p">...</span>  
+    <span class="p">});</span>
+<span class="p">}(</span><span class="nx">jQuery</span><span class="p">));</span>
+</code></pre></div>
+<p>Di luar daripada <em>function</em> objek sebenar dipanggil <em>jQuery</em> tapi dalam function di atas kita boleh mengakses
+objek tersebut melalui nama <code>$</code>.</p>
+
+<h1 id="cara-4---immediately-invoked-function-(using-+-operator)">Cara 4 - Immediately invoked function (using + operator)</h1>
+
+<p>Ianya sama dengan nombor <code>#4</code> di atas cuma menggunakan operator <code>+</code> berbanding <code>()</code>. Cara ini saya jumpa dalam
+code Twitter Bootstrap.</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="o">+</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;hello world&#39;</span><span class="p">);</span>
+<span class="p">}();</span>
+</code></pre></div>
+<p>Kedua-dua cara #3 dan #4 digunakan kerana dalam JavaScript code seperti berikut adalah tidak valid:-</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;hello world&#39;</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Setiap <em>function</em> mesti mempunyai nama (<em>function statement</em>) ataupun jika ianya dalam bentuk <em>function expression</em>, ia mesti dirujuk (<em>assigned</em>) kepada <em>variable</em>. Tetapi kita tidak mahu menambahkan <em>variable</em> baru ke dalam skop global, jadi kita mesti ubah sedikit code tersebut supaya ia kekal sebagai <em>valid expression</em>. Dengan meletakkan <em>function</em> tersebut dalam <em>parantheses</em> <code>()</code> atau pun meletakkan operator <code>+</code> pada sebelum <em>function</em> tersebut, ia menjadikan <em>function</em> itu satu <em>expression</em>. </p>
+
+<h2 id="rujukan">Rujukan</h2>
+
+<ul>
+<li>http://davidbcalhoun.com/2011/different-ways-of-defining-functions-in-javascript-this-is-madness/</li>
+<li>http://www.bryanbraun.com/2014/11/27/every-possible-way-to-define-a-javascript-function</li>
+</ul>
+
+</div>
+
+
+
+<div class="author">
+  <div style="margin-bottom:10px; font-style:italic">Mengenai penulis</div>
+  
+	<div class="pic">
+		<a name="" />
+		<img  src="http://m.c.lnkd.licdn.com/mpr/pub/image-Xi3rdNhL21LXnFhIZ9ai-2TuhAQVtL47Xi3e-Ut6hszrbxGYXi3eI8yLh7vHUjxRwIF7/mohd-kamal-mustafa.jpg" />
+	</div>
+	<div class="bio">
+		<p>
+			<a name="Kamal Mustafa" href="http://my.linkedin.com/in/mk4ml" style="font-weight:bold;">Kamal Mustafa</a> Web developer di MARIMORE Inc. Banyak terlibat dalam pembangunan aplikasi web menggunakan Python/Django (server-side) dan sekarang cuba berjinak-jinak dengan teknologi client-side. Aktif menulis di blog peribadi <a href="http://k4ml.github.io/">ImportError</a> dan Twitter <a href="http://twitter.com/k4ml">@k4ml</a>.
+		<p>
+		<p style="font-style:italic">
+			<a href="http://my.linkedin.com/in/mk4ml">Kamal Mustafa</a> is a Web Developer at MARIMORE Inc. Involved in web applications development using Python/Django (server-side) and now looking into client-side technologies. Actively sharing his thought at personal blog <a href="http://k4ml.github.io/">ImportError</a> and Twitter <a href="http://twitter.com/k4ml">@k4ml</a>.
+		</p>
+                <p>
+                        All writings here are his own and not necessarily represent his employer's positions, strategies or opinions.
+                </p>
+	</div>
+
+</div>
+
+
+<div class="related">
+  <h2>Artikel Berkaitan</h2>
+  <ul class="related-posts">
+    
+      <li>
+        <h3>
+          <a href="/js/memulakan-pengaturcaraan-dalam-javascript.html">
+            Memulakan pengaturcaraan dalam JavaScript
+            <small>30 Mar 2015</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/js/selamat-datang.html">
+            Selamat Datang !
+            <small>29 Mar 2015</small>
+          </a>
+        </h3>
+      </li>
+    
+  </ul>
+</div>
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+var disqus_shortname = 'belajarjs';
+(function() {
+var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="/js/public/js/toc.js"></script>
+    <script type="text/javascript">
+	$(function() {
+	    $('#toc').toc({
+	    	title: ""
+	    });
+	    $('#toc').hide();
+	    $('#toc_toggle').click(function(){
+	    	$('#toc').toggle();
+	    })
+	});
+	</script>
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', '', 'auto');
+	  ga('send', 'pageview');
+
+	</script>
+  </body>
+</html>
